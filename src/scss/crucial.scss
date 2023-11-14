@@ -1,0 +1,138 @@
+nav.hfe-dropdown {
+	left: unset !important;
+	right: 0;
+	display: none;
+	margin-top: 20px;
+	z-index: 9999;
+}
+
+.hfe-active-menu + nav.hfe-dropdown {
+	display: flex;
+}
+
+#frame-mais {
+	display: flex;
+	justify-content: flex-start;
+	gap: 25px;
+}
+
+#frame-mais div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 120px;
+	height: 120px;
+	border: solid 5px;
+	border-radius: 5px;
+}
+
+$gap_frame_mobile: calc(4px + 2vw);
+$border_frame_mobile: calc(3px + .3vw);
+$size_frame_mobile: calc(40px + 6vw);
+$font_frame_mobile: calc(1em + 1vw);
+
+@media all and (max-width: 767px) {
+	#frame-mais {
+		gap: $gap_frame_mobile;
+		font-size: $font_frame_mobile;
+	}
+	#frame-mais div {
+		border-width: $border_frame_mobile;
+		width: $size_frame_mobile;
+		height: $size_frame_mobile;
+	}
+}
+
+@media all and (max-width: 359px) {
+	#frame-mais {
+		font-size: calc($font_frame_mobile * .9);
+	}
+	#frame-mais div {
+		border-width: $border_frame_mobile;
+		width: calc($size_frame_mobile * .9);
+		height: calc($size_frame_mobile * .9);
+	}
+}
+
+#frame-mais div:nth-child(1) {
+	border-color: #0ba74b;
+}
+
+#frame-mais div:nth-child(2) {
+	border-color: #ffce05;
+}
+
+#frame-mais div:nth-child(3) {
+	border-color: #00508f;
+}
+
+#frame-mais div:nth-child(4) {
+	border-color: #f37920;
+}
+
+.title-box {
+	position: relative;
+	padding: 20px 40px;
+}
+
+.title-box::after {
+	content: "";
+	position: absolute;
+	display: block;
+	left: calc(50% - 2.5px);
+	bottom: -50px;
+	width: 5px;
+	height: 50px;
+	background-color: #b1c3d0;
+}
+
+.title-box:not(:first-child) {
+	margin-top: 30px;
+}
+
+.title-box div {
+	margin: 0 !important;
+}
+
+.title-box#verde {
+	background-color: #0ba74b;
+}
+
+.title-box#amarelo {
+	background-color: #ffce05;
+}
+
+.title-box#laranja {
+	background-color: #f37920;
+}
+
+.mb-0 {
+	margin-bottom: 0;
+	margin-block-end: 0;
+	&-p p {
+		margin-bottom: 0;
+		margin-block-end: 0;
+	}
+	&-p-last-child p:last-child {
+		margin-bottom: 0;
+		margin-block-end: 0;
+	}
+}
+
+.galeria img {
+	width: 282px;
+	height: 282px;
+	object-fit: cover;
+}
+
+.patrocinadores img {
+	height: 120px;
+	object-fit: contain;
+}
+
+ul:not(.hfe-nav-menu, .ab-top-menu) {
+	margin-block-end: 0.9rem !important;
+}
+li:not(.menu-item) {
+	margin-block-end: 0.45rem !important;
+}

@@ -1,0 +1,308 @@
+@import "./form.scss";
+@import "./crucial.scss";
+
+:root {
+  --c1: #2c3d49;
+  --c2: #566e7f;
+  --c3: #b1c3d0;
+  --laranja: #f37920;
+  --amarelo: #ffce05;
+  --azul: #00508f;
+  --verde: #0ba74b;
+}
+
+* {
+  // font-family: 'Fira Sans', Roboto, sans-serif;
+  font-family: "Fira Sans", "Lucida Sans Unicode", Verdana, sans-serif;
+}
+
+a:not(.elementor-button, .hfe-menu-item, .btn) {
+  color: unset;
+  color: var(--laranja);
+
+  &:hover {
+    color: var(--azul);
+  }
+}
+
+::selection {
+  background-color: var(--laranja);
+  color: white;
+}
+
+.form,
+#form-contato {
+  label {
+    color: var(--c2);
+    cursor: pointer;
+    width: 100%;
+    font-family: Fira Sans;
+    font-size: 16px;
+    font-weight: 400;
+
+    span {
+      display: block;
+      padding-top: 10px;
+    }
+
+    input,
+    textarea {
+      border-radius: 10px;
+      width: 100%;
+      border: solid 1px var(--c3);
+      color: var(--c1);
+      font-weight: 600;
+
+      &::placeholder {
+        color: var(--c2);
+        opacity: 0.5;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .field-row {
+    padding-top: 10px;
+    display: flex;
+    flex-flow: row;
+    gap: 15px;
+
+    @media all and (max-width: 400px) {
+      flex-flow: column;
+      gap: 10px;
+    }
+  }
+}
+#form-inscricao {
+  input[type="text"] {
+    width: 100%;
+  }
+  input[type="submit"] {
+    width: auto;
+    padding: 10px 20px;
+  }
+}
+
+#contato, #contact {
+  ul, li {
+    margin-block-end: unset !important;
+  }
+}
+
+#form-contato {
+  p {
+    margin-block-end: 20px;
+  }
+  label {
+    color: var(--c2);
+    cursor: pointer;
+    width: 100%;
+    font-family: Fira Sans;
+    font-size: 16px;
+    font-weight: 400;
+
+    span {
+      display: block;
+      padding-top: 10px;
+    }
+
+    input,
+    textarea {
+      border-radius: 10px;
+      width: 100%;
+      border: solid 1px var(--c3);
+
+      &::placeholder {
+        color: var(--c2);
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .submit-wrap {
+    p {
+      text-align: right;
+      display: flex;
+      flex-flow: row-reverse;
+      align-items: center;
+      margin-bottom: 0;
+
+      .wpcf7-spinner {
+        margin: 0 20px;
+      }
+    }
+  }
+
+  input[type="submit"] {
+    padding: 10px 30px;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+#carouselMAIS {
+  position: relative;
+
+  &:has(.carousel-item:first-child:is(.active)) {
+    .carousel-control-prev {
+      display: none;
+    }
+  }
+  &:has(.carousel-item:last-child:is(.active)) {
+    .carousel-control-next {
+      display: none;
+    }
+  }
+
+  .carousel-control {
+    &-prev-icon {
+      background-image: url("../img/caret-right.svg");
+      transform: scaleX(-1);
+    }
+    &-next-icon {
+      background-image: url("../img/caret-right.svg");
+    }
+
+    &-prev,
+    &-next {
+      width: 40px;
+      height: 40px;
+      top: calc(50% - 25px);
+      padding: 0;
+      background: none;
+      border: none;
+      border-radius: 0;
+      background-color: var(--c3);
+      display: flex;
+
+      span {
+        margin: auto;
+        height: 20px;
+        width: 30px;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .carousel-indicators {
+    [data-bs-target] {
+      text-indent: unset;
+      background-color: var(--c3);
+      opacity: 1;
+      border-radius: 0;
+      font-family: Prompt;
+      font-size: 24px;
+      font-weight: 300;
+      width: 35px;
+      height: 35px;
+
+      transition: background-color 0.2s;
+
+      &:not(:first-child),
+      &:not(:last-child) {
+        margin: 0 10px;
+      }
+
+      &.active {
+        background-color: #2c3d49;
+      }
+
+      &:hover {
+        background-color: var(--c2);
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  h3 {
+    margin-left: -1rem;
+    hyphens: auto;
+    word-wrap: break-word;
+  }
+}
+
+@media all and (max-width: 1200px) {
+  .gallery {
+    margin: 0 !important;
+  }
+}
+
+.status-bar {
+  width: 586px;
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 50rem;
+  .icon {
+    padding: 20px;
+    background-color: rgba(#000, 0.1);
+    img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+  }
+  .label {
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    font-family: Prompt;
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: 6.4px;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  &.aprovado {
+    background-color: var(--verde);
+  }
+  &.pendente {
+    background-color: var(--laranja);
+  }
+  &.n-c {
+    background-color: var(--c3);
+  }
+  &.not-found {
+    background-color: rgb(198, 48, 48);
+  }
+
+  @media all and (max-width: 576px) {
+    flex-flow: column;
+    padding: 10px;
+
+    .icon {
+      padding: 10px;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+
+      img {
+        margin: auto;
+        width: 85%;
+        height: 85%;
+      }
+    }
+
+    .label {
+      padding: 10px 0;
+      font-size: 24px;
+    }
+  }
+  @media all and (max-width: 576px) {
+    border-radius: 10px;
+    hyphens: auto;
+  }
+}
